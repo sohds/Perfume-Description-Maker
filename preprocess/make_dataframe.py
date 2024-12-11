@@ -82,4 +82,4 @@ if __name__ == "__main__":
     print(subtitles_df[['파일명', '영상제목', '비디오 ID']].head())
     
     # 필요한 경우 CSV 파일로 저장
-    subtitles_df.to_csv('temp_source/youtube_subtitles_detailed.csv', index=False, encoding='utf-8-sig')
+    subtitles_df.to_csv('temp_source/youtube_subtitles/youtube_subtitles_detailed.csv', index=False, encoding='utf-8-sig')

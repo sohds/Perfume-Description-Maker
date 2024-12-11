@@ -92,5 +92,5 @@ def process_perfume_names(file_path: str, api_key: str, batch_size: int = 20):
 
 # 사용 예시
 api_key = data['CHATGPT_API_KEY']
-file_path = "temp_source/only_perfume_name_description.csv"
+file_path = "temp_source/finetune/only_perfume_name_description.csv"
 processed_df = process_perfume_names(file_path, api_key)

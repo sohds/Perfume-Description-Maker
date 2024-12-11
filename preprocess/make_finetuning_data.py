@@ -10,12 +10,12 @@ def only_notes(row):
     return {"type": "only_notes", "prompt": prompt, "completion": target}
 
 def full_data(row):
-    prompt = f"향수 이름: {row['향수_name']}\n향수 노트: {row['향수_notes']}\n\n해당 향수의 향기에 대한 설명을 작성해주세요.\n\n"
+    prompt = f"향수 이름: {row['향수_이름']}\n향수 노트: {row['향수_notes']}\n\n해당 향수의 향기에 대한 설명을 작성해주세요.\n\n"
     target = row['향수_설명']
     return {"type": "full_data", "prompt": prompt, "completion": target}
 
 def only_names(row):
-    prompt = f"향수 이름: {row['향수_name']}\n\n이 향수의 향기에 대한 설명을 작성해주세요.\n\n"
+    prompt = f"향수 이름: {row['향수_이름']}\n\n이 향수의 향기에 대한 설명을 작성해주세요.\n\n"
     target = row['향수_설명']
     return {"type": "only_names", "prompt": prompt, "completion": target}
 

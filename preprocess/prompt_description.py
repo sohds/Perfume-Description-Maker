@@ -225,8 +225,8 @@ def analyze_results(output_path):
 
 # 실행 예시
 if __name__ == "__main__":
-    input_csv = "temp_source/preprocessed_subtitles.csv"  # 입력 CSV 파일명
-    output_csv = "temp_source/perfume_analysis_results.csv"  # 출력 CSV 파일명
+    input_csv = "temp_source/youtube_subtiltes/preprocessed_subtitles.csv"  # 입력 CSV 파일명
+    output_csv = "temp_source/finetune/perfume_analysis_results.csv"  # 출력 CSV 파일명
     
     # 분석 실행 (기존 진행상황이 있다면 이어서 처리)
     results_df = process_perfume_reviews(input_csv, output_csv)
