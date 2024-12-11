@@ -1,3 +1,7 @@
+# api 관리
+api.json
+preprocess/check.ipynb
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
