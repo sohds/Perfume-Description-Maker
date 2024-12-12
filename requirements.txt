@@ -1,0 +1,6 @@
+streamlit==1.40.0
+pandas==2.2.3
+openai==1.57.2
+langchain-openai==0.2.12
+langchain-community==0.3.5
+chromadb==0.5.18
