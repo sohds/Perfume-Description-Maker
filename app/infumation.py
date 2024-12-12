@@ -20,7 +20,10 @@ logo_path = get_absolute_path('forapp/logo.png')
 logo = Image.open(logo_path)
 
 class PerfumeRAGApp:
-    def __init__(self, persist_directory="./chroma_db", model_name="gpt-4o-mini"):
+    def __init__(self, persist_directory=None, model_name="gpt-4o-mini"):
+        # persist_directory 경로 설정
+        if persist_directory is None:
+            persist_directory = get_absolute_path("./chroma_db")
         self.persist_directory = persist_directory
         self.client = OpenAI(api_key=st.secrets["openai"]["api_key"])
         
@@ -163,7 +166,8 @@ def main():
         # 데이터 로드 및 벡터 스토어 생성
         if st.session_state.app.vectorstore is None:
             with st.spinner("데이터를 준비하고 있습니다..."):
-                df = pd.read_csv("../preprocess/final/rag-gpt.csv")
+                csv_path = get_absolute_path("../preprocess/final/rag-gpt.csv")
+                df = pd.read_csv(csv_path)
                 st.session_state.app.create_vectorstore(df)
     
     # 세션 상태 초기화
