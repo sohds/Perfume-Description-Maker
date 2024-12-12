@@ -10,6 +10,11 @@ from io import BytesIO
 from openai import OpenAI
 import time
 from PIL import Image
+
+import pysqlite3
+import sys
+sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
+import sqlite3
     
 # streamlit 웹 배포를 위한 절대경로 포함
 def get_absolute_path(relative_path):
