@@ -1,3 +1,6 @@
+# 파인튜닝 한 거 저장한 곳
+llm/perfume_description_generator
+
 # api 관리
 api.json
 preprocess/check.ipynb
@@ -81,6 +84,7 @@ target/
 
 # Jupyter Notebook
 .ipynb_checkpoints
+*.ipynb
 
 # IPython
 profile_default/
