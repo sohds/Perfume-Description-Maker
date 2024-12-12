@@ -10,9 +10,6 @@ from io import BytesIO
 from openai import OpenAI
 import time
 from PIL import Image
-
-# API 키 설정 - secrets에서 API 키 가져오기
-openai.api_key = st.secrets["openai"]["api_key"]
     
 # streamlit 웹 배포를 위한 절대경로 포함
 def get_absolute_path(relative_path):
