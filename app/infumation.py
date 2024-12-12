@@ -11,9 +11,8 @@ from openai import OpenAI
 import time
 from PIL import Image
 
-# API 키 설정
-with open('../api.json', 'r', encoding='utf8') as f:
-    data = json.load(f)
+# API 키 설정 - secrets에서 API 키 가져오기
+openai.api_key = st.secrets["openai"]["api_key"]
     
 # streamlit 웹 배포를 위한 절대경로 포함
 def get_absolute_path(relative_path):
@@ -26,11 +25,11 @@ logo = Image.open(logo_path)
 class PerfumeRAGApp:
     def __init__(self, persist_directory="./chroma_db", model_name="gpt-4o-mini"):
         self.persist_directory = persist_directory
-        self.client = OpenAI(api_key=data['CHATGPT_API_KEY'])
+        self.client = OpenAI(api_key=st.secrets["openai"]["api_key"])
         
         # OpenAI 임베딩 설정
         self.embeddings = OpenAIEmbeddings(
-            api_key=data['CHATGPT_API_KEY'],
+            api_key=st.secrets["openai"]["api_key"],
             model="text-embedding-ada-002"
         )
         
@@ -49,7 +48,7 @@ class PerfumeRAGApp:
         self.model = ChatOpenAI(
             model_name=model_name,
             temperature=0.7,
-            api_key=data['CHATGPT_API_KEY']
+            api_key=st.secrets["openai"]["api_key"]
         )
 
     def create_vectorstore(self, df):
